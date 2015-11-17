@@ -1,3 +1,10 @@
+<?php
+
+$this->load->view('includes/header');
+$this->load->view('includes/logout_nav');
+
+?>
+
 <!-- Navigation for Logout Page-->
 
 <div class="container-fluid">
@@ -17,4 +24,6 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-</div>
+</div>  <!--End of Navigation for logout page-->
+
+<body>  <!-- Start of HTML body-->

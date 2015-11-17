@@ -1,3 +1,5 @@
+
+
 <!-- Main navigation for all pages of application not including home and logout-->
 <div class="container-fluid">
     <nav class="navbar navbar-collapse" id="myNav">
@@ -11,10 +13,14 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/index.php/main">Home</a></li>
-                    <li><a href="/index.php/main/create_members">Sign Up</a></li>
+                    <li><a href="/index.php/user/create">Sign Up</a></li>
                     <li><a href="/index.php/logout">Sign Out</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 </div>
+<!--End of Main navigation for all pages ex. home and logout-->
+
+<body>  <!-- Start of HTML body-->
+
