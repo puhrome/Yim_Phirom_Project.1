@@ -57,7 +57,8 @@ class User extends CI_Controller{
     public function registration()
 
     {
-        $this->user_model->add_user();
+
+        $this->load->model('user_model');
 
         $this->load->library('form_validation');
 
@@ -73,6 +74,7 @@ class User extends CI_Controller{
         }
         else
         {
+            $this->user_model->add_user();
             $this->load->view('thank_view');
         }
     }
@@ -85,5 +87,27 @@ class User extends CI_Controller{
         $this->load->view('registration_view');
     }
 
+    public function check_database($password)
+        //this method checks database
+    {
+        $this->load->model('user_model');
+
+        $this->load->library('form_validation');
+
+//        Field validation succeeded.  Validate against database
+        $username = $this->input->post('username');
+
+//        query the database
+        $query = $this->user->login($username, $password);
+
+        $result = $this->db->get('users');
+
+        if ($result->num_rows() == 1) {
+            return $result->row(0)->userId;
+
+        } else {
+            return FALSE;
+        }
+    }
 
 }

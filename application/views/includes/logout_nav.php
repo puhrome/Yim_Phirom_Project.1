@@ -1,9 +1,3 @@
-<?php
-
-$this->load->view('includes/header');
-$this->load->view('includes/logout_nav');
-
-?>
 
 <!-- Navigation for Logout Page-->
 
@@ -19,7 +13,7 @@ $this->load->view('includes/logout_nav');
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/index.php/main">Home</a></li>
-                    <li><a href="/index.php/main/login">Sign In</a></li>
+                    <li><a href="/index.php/login/login_user">Sign In</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

@@ -5,6 +5,7 @@ $this->load->view('includes/logout_nav');
 
 ?>
 
+
 <!-- Start of Logout HTML View-->
 <div class="container" id="bye">
     <h3>Thanks for stopping by!</h3>

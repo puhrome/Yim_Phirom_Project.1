@@ -19,7 +19,6 @@ class Login extends CI_Controller {
 
     }
 
-
     public function index()
     {
         $this->load->helper(array('form', 'url'));
@@ -76,7 +75,7 @@ class Login extends CI_Controller {
 
         //set rules to validate username and callback
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|md5|callback_check_database');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|md5');
 
         //if it validation is FALSE
         if($this->form_validation->run() == FALSE)
@@ -89,10 +88,12 @@ class Login extends CI_Controller {
         //or else route to members page
         else
         {
-            $data['username'] = $this->input->post('username');
+//            $data['username'] = $this->input->post('username');
 
             //Go to private area
-            $this->load->view('members_area', $data);
+            $data['username'] = $this->input->post('username');
+
+            $this->load->view('welcome_view', $data);
         }
 
     }

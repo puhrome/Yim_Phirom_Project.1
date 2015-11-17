@@ -14,7 +14,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/index.php/main">Home</a></li>
                     <li><a href="/index.php/user/create">Sign Up</a></li>
-                    <li><a href="/index.php/logout">Sign Out</a></li>
+                    <li><a href="/index.php/logout/logout_user">Sign Out</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
