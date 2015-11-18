@@ -76,7 +76,7 @@ class Login extends CI_Controller {
 
         //set rules to validate username and callback
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|md5|callback_check_database');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|md5');
 
         //if it validation is FALSE
         if($this->form_validation->run() == FALSE)
@@ -99,7 +99,7 @@ class Login extends CI_Controller {
 
     }
 
-    public function check_database($password)
+    public function check_database()
         //this method checks database
     {
         $this->load->library('form_validation');
@@ -109,7 +109,7 @@ class Login extends CI_Controller {
         $username = $this->input->post('username');
 
 //      query the database
-        $result = $this->user->login($username, $password);
+//        $result = $this->user->login($username, $password);
 
         $result = $this->db->get('user');
 

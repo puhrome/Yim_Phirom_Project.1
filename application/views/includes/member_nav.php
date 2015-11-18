@@ -9,7 +9,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav navbar-left">
+                <ul class="nav navbar-nav navbar-right">
                     <li><a href="/index.php/main">Home</a></li>
                     <li><a href="/index.php/shopping">Shop</a></li>
                     <li><a href="/index.php/logout/logout_user">Sign Out</a></li>

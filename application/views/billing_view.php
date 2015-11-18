@@ -14,7 +14,7 @@ endif;
 
 <?php
 
-$this->load->view('includes/navigation');
+$this->load->view('includes/member_nav');
 ?>
 
 <div class="container input-group" id="bill_info">
