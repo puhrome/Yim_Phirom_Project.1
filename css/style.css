@@ -71,6 +71,14 @@ body {
 
 }
 
+#welcome h4{
+    width: 70%;
+    font-size: 6em;
+    font-family: 'Learning Curve', 'Pacifico', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 5% 0 1%;
+    margin: 0 auto;
+    text-align: center;
+}
 
 /*---- Header, h1, h2, p, footer -- Styling---*/
 
@@ -99,6 +107,8 @@ h3 {
 
 
 }
+
+
 #login_form h1, #bill_info h1{
     text-align: center;
     padding: 3%;
@@ -397,7 +407,7 @@ input[type="text"]:hover, input[type="password"]:hover {
 }
 .caption {
     padding:10px;
-    background-color:rgba(0,0,0,0.7);
+    background-color:rgba(0,0,0,0.2);
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -411,15 +421,8 @@ input[type="text"]:hover, input[type="password"]:hover {
     font-size:15px;
     color: #AAFCAE;
 }
-h5 {
-    margin-top: 0px;
-    color: white;
-    max-height: 30px;
-    overflow: hidden;
-}
-.img-responsive img{
-    width: 100%;
-}
+
+
 .container {
     width: 100%;
 }
@@ -456,26 +459,7 @@ h5 {
 .clear {
     clear: both;
 }
-.items {
-    display: block;
-    margin: 20px 0;
-}
-.item {
-    background-color: #fff;
-    float: left;
-    margin: 0 10px 10px 0;
-    width: 205px;
-    padding: 10px;
-    height: 290px;
-}
-.item img {
-    display: block;
-    margin: auto;
-}
 
-span {
-    float: right;
-}
 .shopping-cart {
     display: inline-flex;
     background: url('http://cdn1.iconfinder.com/data/icons/jigsoar-icons/24/_cart.png') no-repeat 0 0;
