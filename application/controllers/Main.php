@@ -12,6 +12,8 @@ class Main extends CI_Controller{
         $this->load->model('Users'); //automatically load Users model
         $this->load->model('User_model'); //automatically load User_model
 
+        $this->load->library('cart'); //automatically load cart library
+
         $this->load->helper('security'); //security helper for xss_clean
 
     }
@@ -45,23 +47,43 @@ class Main extends CI_Controller{
 
     public function members()
     {
+//        $this->load->model('user_model');
+//
+//        //if it validation is FALSE
+//        if ($this->add_user->run() == FALSE) //load this view for redirect and login
+//        {
+//
+//            //$this method loads the view
+//            $data['main_content'] = 'login_form'; //create a new key for this variable to load in view
+//
+//            $this->load->view('includes/header', $data); //load template with two parameters, template and $data(main_content) variable
+//
+//        } //or else route to members page
+//        else {
+//            $data['username'] = $this->input->post('username');
+//
+//            //Go to private area
+//            $this->load->view('welcome_view', $data);
+//        }
+
         $this->load->model('user_model');
 
-        //if it validation is FALSE
-        if ($this->add_user->run() == FALSE) //load this view for redirect and login
+        $this->load->library('form_validation');
+
+        //set rules to validate username and callback
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|md5|callback_check_database');
+
+
+        if($this->form_validation->run() == FALSE)
         {
-
-            //$this method loads the view
-            $data['main_content'] = 'login_form'; //create a new key for this variable to load in view
-
-            $this->load->view('includes/header', $data); //load template with two parameters, template and $data(main_content) variable
-
-        } //or else route to members page
-        else {
-            $data['username'] = $this->input->post('username');
-
-            //Go to private area
-            $this->load->view('welcome_view', $data);
+            $this->load->view('registration_view');
+        }
+        else
+        {
+            $this->user_model->add_user();
+            $this->load->view('thank_view');
         }
 
     }

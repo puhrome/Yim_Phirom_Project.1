@@ -61,6 +61,7 @@ class Login extends CI_Controller {
     public function login_user(){ //method to tell what to view with login model
 
     {
+        $this->load->model('user_model');
         $this->load->view('login_form'); //load login form view
 
     }
@@ -75,7 +76,7 @@ class Login extends CI_Controller {
 
         //set rules to validate username and callback
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|md5');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|md5|callback_check_database');
 
         //if it validation is FALSE
         if($this->form_validation->run() == FALSE)
@@ -98,17 +99,17 @@ class Login extends CI_Controller {
 
     }
 
-    public function check_database()
+    public function check_database($password)
         //this method checks database
     {
         $this->load->library('form_validation');
 
 
 //      Field validation succeeded.  Validate against database
-//        $username = $this->input->post('username');
+        $username = $this->input->post('username');
 
 //      query the database
-//        $result = $this->login_user->login($username, $password);
+        $result = $this->user->login($username, $password);
 
         $result = $this->db->get('user');
 

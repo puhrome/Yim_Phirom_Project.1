@@ -1,14 +1,18 @@
-<div id="content">
-    <div class="signup_wrap">
-        <div class="signin_form">
-            <?php echo form_open("user/login"); ?>
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" value="" />
-            <label for="pass">Password:</label>
-            <input type="password" id="pass" name="pass" value="" />
-            <input type="submit" class="" value="Sign in" />
-            <?php echo form_close(); ?>
-        </div><!--<div class="signin_form">-->
-    </div><!--<div class="signup_wrap">-->
-    <h1>Thank!</h1>
-</div><!--<div id="content">-->
+<?php
+
+$this->load->view('includes/header');
+$this->load->view('includes/navigation');
+
+?>
+<div class="content">
+    <div class="container">
+        <h4>Welcome <span class="uname"><?php echo $username; ?>!</span></h4>
+
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+
+    </div>
+
+</div><!--<div class="content">-->

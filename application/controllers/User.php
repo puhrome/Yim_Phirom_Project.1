@@ -43,9 +43,10 @@ class User extends CI_Controller{
         $result=$this->Users->login($email,$enc_password);
 
         if($result) $this->welcome();
-        else        $this->load->view('login_form');
-    }
+        else $this->load->view('login_form');
 
+
+        }
     public function thank()
     {
         $data['title']= 'Thank';
@@ -65,7 +66,7 @@ class User extends CI_Controller{
         //set rules to validate username and callback
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|md5|callback_check_database');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|md5');
 
 
         if($this->form_validation->run() == FALSE)
@@ -74,9 +75,21 @@ class User extends CI_Controller{
         }
         else
         {
-            $this->user_model->add_user();
-            $this->load->view('thank_view');
-        }
+
+            $data=array(
+                'username'=>$this->input->post('username'),
+                'email'=>$this->input->post('email'),
+                'password'=>md5($this->input->post('password'))
+            );
+
+            $this->user_model->add_user('user',$data);
+
+            //Go to private area
+            $data['username'] = $this->input->post('username');
+
+            $this->load->view('welcome_view', $data);        }
+
+
     }
 
     public function create()
@@ -98,9 +111,9 @@ class User extends CI_Controller{
         $username = $this->input->post('username');
 
 //        query the database
-        $query = $this->user->login($username, $password);
+        $result = $this->user_model->login($username, $password);
 
-        $result = $this->db->get('users');
+        $result = $this->db->get('user');
 
         if ($result->num_rows() == 1) {
             return $result->row(0)->userId;

@@ -32,7 +32,7 @@ body {
 
 /*---- Container, DIV -- Styling---*/
 
-#login_form {
+#login_form, #bill_info {
     width: 50%;
     background-color: #F1654C;
     margin: 15% auto;
@@ -99,7 +99,7 @@ h3 {
 
 
 }
-#login_form h1{
+#login_form h1, #bill_info h1{
     text-align: center;
     padding: 3%;
     margin: 0 auto;
@@ -145,14 +145,14 @@ footer {
 
 
 }
-#login_form h4 {
+#login_form h4, #bill_info h4 {
     padding: 3%;
     font-size: 4em;
     color: #ffffff;
 
 }
 
-#home h4, #login_form h4 {
+#home h4, #login_form h4, #bill_info h4 {
     font-family: 'Learning Curve','Pacifico', "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-shadow: 1px 1px #222;
 
@@ -191,7 +191,6 @@ span.uname  {
     text-transform: capitalize;
 }
 /*---- Navigation, ul, li, a -- Styling---*/
-
 
 .navbar {
     border-radius: 0;
@@ -388,6 +387,107 @@ input[type="text"]:hover, input[type="password"]:hover {
     }
 }
 
+/* CSS used here will be applied after bootstrap.css */
+
+.productbox {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+}
+.caption {
+    padding:10px;
+    background-color:rgba(0,0,0,0.7);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 40%;
+    overflow: hidden;
+    font-size: 11px;
+    color: #FFF;
+
+}
+.finalprice {
+    font-size:15px;
+    color: #AAFCAE;
+}
+h5 {
+    margin-top: 0px;
+    color: white;
+    max-height: 30px;
+    overflow: hidden;
+}
+.img-responsive img{
+    width: 100%;
+}
+.container {
+    width: 100%;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding: 5%;
+}
+.btn-block {
+    margin-top: 2%;
+}
+.saleoffrate{
+    position: absolute;
+    top:10px;
+    left: 10px;
+    padding-top: 13px;
+    text-align:center;
+    background-color: rgba(76, 174, 76,0.8);
+    color: #FFFFFF;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    line-height: 13px;
+}
+@media (min-width: 384px) and (max-width: 768px) {
+    .img-responsive img{
+        max-width: 50%;
+    }
+    .img-responsive{
+        text-align: center;
+    }
+}
+
+/*--- CART styling -----*/
+
+.clear {
+    clear: both;
+}
+.items {
+    display: block;
+    margin: 20px 0;
+}
+.item {
+    background-color: #fff;
+    float: left;
+    margin: 0 10px 10px 0;
+    width: 205px;
+    padding: 10px;
+    height: 290px;
+}
+.item img {
+    display: block;
+    margin: auto;
+}
+
+span {
+    float: right;
+}
+.shopping-cart {
+    display: inline-flex;
+    background: url('http://cdn1.iconfinder.com/data/icons/jigsoar-icons/24/_cart.png') no-repeat 0 0;
+    width: 24px;
+    height: 24px;
+
+}
+
+.container-fluid#cart_img {
+    width: 80%;
+    margin: 0 auto;
+}
 /*---- MEDIA --- QUERIES ----*/
 
 @media only screen and (max-width: 680px) {

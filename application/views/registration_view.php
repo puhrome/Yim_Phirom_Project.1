@@ -10,6 +10,8 @@ $this->load->view('includes/navigation');
 
         <h1>Hello</h1>
 
+        <h4>Sign Up</h4>
+
                 <?php echo validation_errors(); ?>
 
                 <?php echo form_open('/index.php/user/registration');
