@@ -12,6 +12,8 @@ class Login extends CI_Controller {
         $this->load->model('Users'); //automatically load Users model
         $this->load->model('User_model'); //automatically load User_model
 
+        $this->load->model('Login_model');
+
         $this->load->helper('security'); //security helper for xss_clean
 
         if(!empty($_SESSION['id']))
@@ -21,9 +23,10 @@ class Login extends CI_Controller {
 
     public function index()
     {
-        $this->load->helper(array('form', 'url'));
 
-        $this->load->library('form_validation');
+        $this->load->helper(array('form', 'url')); //load helper form and url
+
+        $this->load->library('form_validation'); //load form validation library
 
         $this->load->view('login_form'); //load login form view
 
@@ -43,18 +46,18 @@ class Login extends CI_Controller {
             }
         }
 
-//
-//        if($this->session->userdata('logged_in'))
-//        {
-//            $session_data = $this->session->userdata('logged_in');
-//            $data['username'] = $session_data['username'];
-//            $this->load->view('members_area', $data);
-//        }
-//        else
-//        {
-//            //If no session, redirect to login page
-//            redirect('login_form', 'refresh');
-//        }
+
+        if($this->session->userdata('logged_in'))
+        {
+            $session_data = $this->session->userdata('logged_in');
+            $data['username'] = $session_data['username'];
+            $this->load->view('members_area', $data);
+        }
+        else
+        {
+            //If no session, redirect to login page
+            redirect('login_form', 'refresh');
+        }
 
     }
 
@@ -76,7 +79,7 @@ class Login extends CI_Controller {
 
         //set rules to validate username and callback
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|md5');
+        $this->form_validation->set_rules('check_database','password', 'Password', 'trim|required|md5');
 
         //if it validation is FALSE
         if($this->form_validation->run() == FALSE)
@@ -99,39 +102,33 @@ class Login extends CI_Controller {
 
     }
 
-    public function check_database()
+    public function check_database($password)
         //this method checks database
     {
+        $this->load->model('login_model');
+
         $this->load->library('form_validation');
 
-
-//      Field validation succeeded.  Validate against database
+//        Field validation succeeded.  Validate against database
         $username = $this->input->post('username');
 
-//      query the database
-//        $result = $this->user->login($username, $password);
+        $this->db->where($username, $password);
+//        query the database
+        $query = $this->db->get('user');
 
-        $result = $this->db->get('user');
-
-        if ($result->num_rows() == 1) {
-            return $result->row(0)->id;
+        if ($query->num_rows() == 1) {
+            return $query->row(0)->userid;
 
         } else {
             return FALSE;
         }
     }
 
-
-
-    public function create(){
-
-
     }
-//    function logout()
-//    {
-//        $this->session->unset_userdata('logged_in');
-//        session_destroy();
-//        redirect('/index.php/logout_view', 'refresh');
-//    }
+    function logout()
+    {
+        $this->session->unset_userdata('logged_in');
+        session_destroy();
+        redirect('/index.php/logout_view', 'refresh');
 
 }

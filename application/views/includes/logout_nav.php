@@ -6,13 +6,12 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="#" id="logo"><img src="/assets/images/aco_logo_03.png" class="img-responsive" width="50px" height="50px"></a>
+                <a class="navbar-brand" href="/index.php/main" id="logo"><img src="/assets/images/aco_logo_03.png" class="img-responsive" width="50px" height="50px"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav navbar-left">
-                    <li><a href="/index.php/main">Home</a></li>
+                <ul class="nav navbar-nav navbar-right">
                     <li><a href="/index.php/login/login_user">Sign In</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->

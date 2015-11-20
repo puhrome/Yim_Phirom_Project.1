@@ -12,6 +12,8 @@
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font_awesome/css/font-awesome.min.css">
+
     <!--Base url for CSS-->
     <link rel="stylesheet" href="<?php echo base_url();?>css/style.css" type="text/css"/>
 

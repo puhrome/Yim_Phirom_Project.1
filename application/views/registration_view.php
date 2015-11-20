@@ -8,7 +8,7 @@ $this->load->view('includes/navigation');
 <div class="container input-group" id="login_form">
     <div class="container-fluid">
 
-        <h1>Hello</h1>
+        <h1>Hello,</h1>
 
         <h4>Sign Up</h4>
 

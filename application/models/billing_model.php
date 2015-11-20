@@ -26,15 +26,18 @@ class Billing_model extends CI_Model {
 	{
 		$this->db->insert('orders', $data);
 		$id = $this->db->insert();
-		return (isset($id)) ? $id : FALSE;
+		return (isset($id)) ? $id : false;
 	}
 	
-        // Insert ordered product detail in "order_detail" table in database.
+	// Insert ordered product detail in "order_detail" table in database.
 	public function insert_order_detail($data)
 	{
 		$this->db->insert('order_detail', $data);
+		$id = $this->db->insert();
+		return (isset($id)) ? $id : FALSE;
 	}
 
 
        
 }
+

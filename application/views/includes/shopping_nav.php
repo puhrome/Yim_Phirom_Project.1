@@ -12,8 +12,6 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/index.php/main">Home</a></li>
                     <li><a href="/index.php/logout/logout_user">Sign Out</a></li>
-                    <li><a href="/index.php/shopping/billing_view"><span><i class="shopping-cart"></i></span>
-                        </a></li>
 
                 </ul>
             </div><!-- /.navbar-collapse -->

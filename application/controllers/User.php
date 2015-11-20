@@ -46,13 +46,6 @@ class User extends CI_Controller{
         else $this->load->view('login_form');
 
 
-        }
-    public function thank()
-    {
-        $data['title']= 'Thank';
-        $this->load->view('header_view',$data);
-        $this->load->view('thank_view.php', $data);
-        $this->load->view('footer_view',$data);
     }
 
     public function registration()
@@ -60,7 +53,6 @@ class User extends CI_Controller{
     {
 
         $this->load->model('user_model');
-
         $this->load->library('form_validation');
 
         //set rules to validate username and callback
@@ -72,14 +64,13 @@ class User extends CI_Controller{
         if($this->form_validation->run() == FALSE)
         {
             $this->load->view('registration_view');
-        }
-        else
-        {
 
-            $data=array(
-                'username'=>$this->input->post('username'),
-                'email'=>$this->input->post('email'),
-                'password'=>md5($this->input->post('password'))
+        } else {
+
+            $data   =   array(
+                        'username'  =>  $this->input->post('username'),
+                        'email'     =>  $this->input->post('email'),
+                        'password'  =>  md5($this->input->post('password'))
             );
 
             $this->user_model->add_user('user',$data);
@@ -88,16 +79,6 @@ class User extends CI_Controller{
             $data['username'] = $this->input->post('username');
 
             $this->load->view('welcome_view', $data);        }
-
-
-    }
-
-    public function create()
-    {
-
-        $this->load->model('user_model');
-        //method to load members page
-        $this->load->view('registration_view');
     }
 
     public function check_database($password)
@@ -116,7 +97,7 @@ class User extends CI_Controller{
         $result = $this->db->get('user');
 
         if ($result->num_rows() == 1) {
-            return $result->row(0)->userId;
+            return $result->row(0)->userid;
 
         } else {
             return FALSE;

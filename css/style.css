@@ -31,6 +31,21 @@ body {
 }
 
 /*---- Container, DIV -- Styling---*/
+#about {
+    width: 70%;
+    background-color: #ffffff;
+    padding: 2%;
+    height: 600px;
+    margin: 0 auto;
+
+}
+
+#subscribe {
+    background-color: #222;
+    color: #F1654C;
+    margin: 0 auto;
+}
+
 
 #login_form, #bill_info {
     width: 50%;
@@ -41,6 +56,17 @@ body {
     border: 4px solid #F1654C;
 
 }
+#vid {
+    margin: 0 auto;
+    padding: 3%;
+    text-align: center;
+}
+
+#vid h1{
+    padding: 2%;
+}
+
+
 .container {
     width: 80%;
     padding: 2%;
@@ -49,6 +75,14 @@ body {
 
 .paragraph.container {
     padding: 5% 2% 20%;
+}
+
+.paragraph h4 {
+    line-height: 2em;
+    font-size: 2.5em;
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-family: "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .container-fluid {
     width: 100%;
@@ -59,10 +93,9 @@ body {
     margin: 0;
     border: none;
 }
-#home .jumbotron {
+#home {
     background: url("/assets/images/espresso_machine.jpg") no-repeat center fixed;
     border: none;
-    height: 30%;
     border-radius: 0;
     width: 100%;
     margin: 0 auto;
@@ -70,7 +103,10 @@ body {
     text-align: center;
 
 }
-
+#subscribe {
+    margin: 5% 0;
+    padding: 5%;
+}
 #welcome h4{
     width: 70%;
     font-size: 6em;
@@ -107,7 +143,12 @@ h3 {
 
 
 }
-
+ h6 {
+     font-size: 2em;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     font-weight: 200;
+ }
 
 #login_form h1, #bill_info h1{
     text-align: center;
@@ -115,7 +156,9 @@ h3 {
     margin: 0 auto;
 }
 
-
+#subscribe h1 {
+    text-align: center;
+}
 p, a {
     font-family: 'Avenir', cursive;
     letter-spacing: 1px;
@@ -151,9 +194,12 @@ footer {
     font-size: 5em;
     text-align: center;
     padding: 1%;
-     color: #d4d4d4;
+    color: #ffffff;
+}
 
-
+#head{
+    padding: 2% 2% 5%;
+    margin: 5% auto;
 }
 #login_form h4, #bill_info h4 {
     padding: 3%;
@@ -167,7 +213,11 @@ footer {
     text-shadow: 1px 1px #222;
 
 }
-
+#subscribe h1 {
+    font-size: 4em;
+    color: #F1654C;
+    letter-spacing: 2px;
+}
 #bye h1 {
     text-align: center;
     padding: 2%;
@@ -286,7 +336,7 @@ input:hover {
 }
 
 input[type="submit"], {
-    background-color:  #d4d4d4;
+    background-color:  #3E4651;
     text-align: center;
     border-radius: 1px;
     border: none;
@@ -294,7 +344,7 @@ input[type="submit"], {
     text-transform: uppercase;
 }
 input[type="submit"]:hover,  {
-    background-color: #3E4651;
+    background-color: #C5D8D7;
     color: #d4d4d4;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
@@ -321,8 +371,26 @@ input[type="button"]:hover {
     transition: all .5s ease-in-out;
 
 }
-input[type="checkbox"] {
-    margin: 3%;
+#subscribe input, #shopping input{
+    padding: 5%;
+    border: 2px solid #F1654C;
+    background-color:  transparent;
+    text-align: center;
+    border-radius: 1px;
+    color: #F1654C;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
+
+#subscribe input:hover, #shopping input:hover {
+    background-color: #F1654C;
+    color: #ddd;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+
 }
 form a, #btn  {
     color: #ffffff;
@@ -355,7 +423,49 @@ input[type="text"], input[type="password"] {
 input[type="text"]:hover, input[type="password"]:hover {
     background-color: #e2e2e2;
 }
+#cart_form {
+    width: 95%;
+    margin: 0 auto;
+    padding: 3%;
+}
 
+#cart_form p {
+    font-size: 1em;
+}
+#cart_form form {
+    padding: 3%;
+    margin: 0 auto;
+    text-align: right;
+    display: inline;
+
+}
+
+#cart_form .cart_btn {
+    display: inline-flex;
+    padding: 3%;
+    float: right;
+    clear: both;
+}
+#grand_total {
+    padding: 3%;
+    text-shadow: 1px 1px 1px #222;
+}
+input#total_btn  {
+    width: 30%;
+    padding: 3%;
+    float: right;
+}
+input#clear_btn.cart_btn {
+    background-color: #F1654C;
+    text-align: center;
+    color: #ffffff;
+
+}
+
+input#clear_btn.cart_btn:hover {
+    background-color: #dddddd;
+    color: #F1654C;
+}
 /* ---- CAROUSEL --- */
 
 .carousel,.item,.active{
@@ -399,65 +509,21 @@ input[type="text"]:hover, input[type="password"]:hover {
 
 /* CSS used here will be applied after bootstrap.css */
 
-.productbox {
-    position: relative;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    -webkit-transition: all .2s ease-in-out;
-}
-.caption {
-    padding:10px;
-    background-color:rgba(0,0,0,0.2);
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    max-height: 40%;
-    overflow: hidden;
-    font-size: 11px;
-    color: #FFF;
-
-}
-.finalprice {
-    font-size:15px;
-    color: #AAFCAE;
-}
-
-
-.container {
-    width: 100%;
-}
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-    padding: 5%;
+    padding: 1%;
 }
-.btn-block {
-    margin-top: 2%;
-}
-.saleoffrate{
-    position: absolute;
-    top:10px;
-    left: 10px;
-    padding-top: 13px;
-    text-align:center;
-    background-color: rgba(76, 174, 76,0.8);
-    color: #FFFFFF;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    line-height: 13px;
-}
-@media (min-width: 384px) and (max-width: 768px) {
-    .img-responsive img{
-        max-width: 50%;
-    }
-    .img-responsive{
-        text-align: center;
-    }
-}
+
+
 
 /*--- CART styling -----*/
-
+.item_info {
+    border: 2px solid #222;
+    border-radius: 2px;
+    padding: 5%;
+    margin: 4%;
+}
 .clear {
-    clear: both;
+    clear: left;
 }
 
 .shopping-cart {
@@ -471,6 +537,89 @@ input[type="text"]:hover, input[type="password"]:hover {
 .container-fluid#cart_img {
     width: 80%;
     margin: 0 auto;
+}
+#cart_sect {
+    text-align: center;
+    margin-top: 20%;
+    padding: 3%;
+}
+
+#cart_checkout {
+    margin: 0 auto;
+    width: 90%;
+
+}
+
+#cart_checkout input[type="text"] {
+    margin: 0 auto;
+    border: 2px solid #222;
+    background-color: transparent;
+    text-align: right;
+    color: #F1654C;
+    padding: 0 4%;
+
+}
+#cart_checkout input[type="text"]:hover {
+    background-color: #222;
+
+}
+#grand_total h1{
+    color: #F1654C;
+    font-size: 3em;
+    text-align: right;
+    padding: 2%;
+}
+#name>h2 {
+    text-align: left;
+    color: #222;
+    text-shadow: none;
+    font-size: 6em;
+}
+#num_input {
+    float: right;
+    font-size: 2em;
+    width: 10%;
+    margin: 0 auto;
+    border: transparent;
+    clear: both;
+}
+.description {
+    float: right;
+    margin: 2%;
+    clear: both;
+}
+#price>h1 {
+    text-align: right;
+    font-size: 4em;
+    color: #222;
+}
+
+
+#shopping {
+    width: 90%;
+}
+
+form#add_button {
+    width: 30%;
+    padding: 2%;
+    -webkit-transition: all 1s ease-in;
+    -moz-transition: all 1s ease-in;
+    -o-transition: all 1s ease-in;
+}
+
+form input[type="button"]:hover {
+    border: 1px solid #222;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+}
+
+#main_heading {
+    padding-left: 2%;
+    font-size: 1em;
+}
+
+#subtotal {
 }
 /*---- MEDIA --- QUERIES ----*/
 
@@ -514,6 +663,10 @@ input[type="text"]:hover, input[type="password"]:hover {
         max-width: 50%;
     }
 
+    #shopping {
+        width: 100%;
+    }
+
 }
 @media only screen and (max-width: 480px) {
     h1 {
@@ -537,6 +690,10 @@ input[type="text"]:hover, input[type="password"]:hover {
         margin: 15% auto;
         padding: 3% 1%;
 
+    }
+
+    #shopping {
+        width: 100%;
     }
 
 }
@@ -564,5 +721,9 @@ input[type="text"]:hover, input[type="password"]:hover {
         margin: 15% auto;
         padding: 3% 1%;
 
+    }
+
+    #shopping {
+        width: 100%;
     }
 }
